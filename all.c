@@ -37,7 +37,7 @@ int		multiplicate_expression(char **str)//请解释“多重表达式”是什�
 	int		nb2;
 	char	operator;
 
-	nb1 = parse_parenthesis(str);//这里call function'是做什么？
+	nb1 = parse_parenthesis(str);//这里call function'是做什么？找第一个数，
 	while (**str == '*' || **str == '/' || **str == '%')//判断乘除摩符号，
 	{
 		operator = **str;
@@ -48,7 +48,7 @@ int		multiplicate_expression(char **str)//请解释“多重表达式”是什�
 	return (nb1);//不是乘除 返回一个nb1
 }
 
-int		primary_expression(char **str)//我们第二个看这个函数  2 我的理解是，它要找到最最优先的（3+4）
+int		primary_expression(char **str)//我们第二个看这个函数  2 我的理解是，给一个formule 算出一个结果 不是它要找到最最优先的（3+4）
 {
 	int		nb1;
 	int		nb2;
@@ -60,7 +60,7 @@ int		primary_expression(char **str)//我们第二个看这个函数  2 我的理
 		operator = **str;
 		*str = *str + 1;
 		if (operator == '+' || operator == '-')
-			nb2 = multiplicate_expression(str);//这里是为什么去做乘除？
+			nb2 = multiplicate_expression(str);//这里是为什么去做乘除？有可能会叫到-多个方程之间的递归。
 		else
 			nb2 = parse_parenthesis(str);
 		nb1 = do_op(nb1, nb2, operator);//运算结果保存到nb1
