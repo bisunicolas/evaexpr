@@ -23,7 +23,7 @@ int		parse_parenthesis(char **str)//返回nb1 atoi变形 不单单去找括号�
 			*str = *str + 1;
 		return (signe * nbr);
 	}
-	while ('0' <= **str && **str <= '9')//求大神举例，让思路清晰
+	while ('0' <= **str && **str <= '9')//求大神举例，使思路清晰
 	{
 		nbr = (nbr * 10) + **str - '0';
 		*str = *str + 1;
@@ -31,14 +31,14 @@ int		parse_parenthesis(char **str)//返回nb1 atoi变形 不单单去找括号�
 	return (signe * nbr);
 }
 
-int		multiplicate_expression(char **str)//请解释多重表达式是什么意思？
+int		multiplicate_expression(char **str)//请解释“多重表达式”是什么意思？
 {
 	int		nb1;
 	int		nb2;
 	char	operator;
 
 	nb1 = parse_parenthesis(str);//这里call function'是做什么？
-	while (**str == '*' || **str == '/' || **str == '%')
+	while (**str == '*' || **str == '/' || **str == '%')//判断乘除摩符号，
 	{
 		operator = **str;
 		*str = *str + 1;
@@ -63,7 +63,7 @@ int		primary_expression(char **str)//2 （3+4）
 			nb2 = multiplicate_expression(str);//这里是为什么去做乘除？
 		else
 			nb2 = parse_parenthesis(str);
-		nb1 = do_op(nb1, nb2, operator);
+		nb1 = do_op(nb1, nb2, operator);//运算结果保存到nb1
 	}
 	return (nb1);
 }
