@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <unistd.h>
-#include "../includes/functions.h"
+
 
 int		parse_parenthesis(char **str)//返回nb1 atoi变形 不单单去找括号，还返回正负数
 {
