@@ -37,13 +37,13 @@ int		multiplicate_expression(char **str)//请解释多重表达式是什么意�
 	int		nb2;
 	char	operator;
 
-	nb1 = parse_parenthesis(str);//为什么这里要call function'
+	nb1 = parse_parenthesis(str);//这里call function'是做什么？
 	while (**str == '*' || **str == '/' || **str == '%')
 	{
 		operator = **str;
 		*str = *str + 1;
 		nb2 = parse_parenthesis(str);
-		nb1 = do_op(nb1, nb2, operator);//乘除运算。
+		nb1 = do_op(nb1, nb2, operator);//做乘除运算。
 	}
 	return (nb1);
 }
@@ -116,7 +116,7 @@ int	do_op(int nb1, int nb2, char operator)
 		return (nb1 % nb2);
 	return (0);
 }
- 
+
 
 void	ft_putnbr(int nb)
 {
