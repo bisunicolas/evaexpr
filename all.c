@@ -43,12 +43,12 @@ int		multiplicate_expression(char **str)//请解释“多重表达式”是什�
 		operator = **str;
 		*str = *str + 1;
 		nb2 = parse_parenthesis(str);
-		nb1 = do_op(nb1, nb2, operator);//做乘除运算。
+		nb1 = do_op(nb1, nb2, operator);//while 乘除 摩 做运算！
 	}
-	return (nb1);
+	return (nb1);//不是乘除 返回一个nb1
 }
 
-int		primary_expression(char **str)//2 （3+4）
+int		primary_expression(char **str)//我们第二个看这个函数  2 我的理解是，它要找到最最优先的（3+4）
 {
 	int		nb1;
 	int		nb2;
@@ -96,13 +96,13 @@ char	*remove_whitespaces(char *str)
 
 int		eval_expr(char *str)
 {
-	str = remove_whitespaces(str);//1
+	str = remove_whitespaces(str);//我们第一个看这个函数  1
 	if (*str == '\0')
 		return (0);
 	return (primary_expression(&str));
 }
 
-int	do_op(int nb1, int nb2, char operator)
+int	do_op(int nb1, int nb2, char operator)//if op符号知道，运算 nb1 nb2，返回
 {
 	if (operator == '+')
 		return (nb1 + nb2);
@@ -118,7 +118,7 @@ int	do_op(int nb1, int nb2, char operator)
 }
 
 
-void	ft_putnbr(int nb)
+void	ft_putnbr(int nb)//最后运算结果数字打出来
 {
 	unsigned int	nbr;
 
@@ -135,7 +135,7 @@ void	ft_putnbr(int nb)
 }
 
 
-int	ft_strlen(char *str)
+int	ft_strlen(char *str)//计算字符串里字符数，
 {
 	int	count;
 
@@ -145,7 +145,7 @@ int	ft_strlen(char *str)
 	return (count);
 }
  
-void	ft_putchar(char c)
+void	ft_putchar(char c)//打单个字符
 {
 	write(1, &c, 1);
 }
