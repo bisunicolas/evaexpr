@@ -18,7 +18,7 @@ int		parse_parenthesis(char **str)//返回nb1 atoi变形 不单单去找括号�
 	if (**str == '(')
 	{
 		*str = *str + 1;
-		nbr = primary_expression(str);
+		nbr = primary_expression(str);//在这里找回括号
 		if (**str == ')')
 			*str = *str + 1;
 		return (signe * nbr);
