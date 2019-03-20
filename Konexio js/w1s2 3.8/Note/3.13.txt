@@ -1,0 +1,15 @@
+Etienne, ctrl shift i, console 
+éviter de reecrire function donc id est different
+propriete correspond la balise. 
+type undefined. distribue pas valeur; null. mot clé du language. c codé 
+NaN not a number
+typeof; var est dynamique is, ' ' 'l\'origine'
+** power
+cohesion de type: == 3 == '3';
+0 == false, à peu près équivalent. 
+assigner une valeur à une variable; on peut dire afecter
+
+ console.log("l'utilisateur a choisi: ", color);
+
+etape par etape ===;
+offset decalage
